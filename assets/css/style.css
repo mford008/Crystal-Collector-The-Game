@@ -1,3 +1,4 @@
+
 html, body {
   height: 100%;
   margin: 0;
@@ -35,6 +36,10 @@ span {
 	font-size: 30px;
 }
 
+.directions {
+  padding-right: 20px;
+  padding-left: 20px;
+}
 .crystals {
 	display: flex;
 	justify-content: space-around;

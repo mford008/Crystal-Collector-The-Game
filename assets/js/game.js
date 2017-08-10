@@ -1,45 +1,119 @@
-//Variable bank
+//Global object for starting variables in game
 
-var playerNumber = 0
-var computerNumber = 0
+var crystalGame = {
+	type: "",
+	id: [],
+	value: [],
+	playerNumber: [],
+	computerNumber: [],
+	wins: 0,
+	losses: 0,
+};
 
+//Array for individual crystals, values set to zero for beginning of game
+var crystal = [ //how should I call each individual value?
+	{
+		type: "white",
+		id: 0,
+		value: 0
+	}
+	{
+		type: "blue",
+		id: 0,
+		value: 0
+	}
+	{
+		type: "green",
+		id: 0,
+		value: 0
+	}
+	{
+		type: "orange",
+		id: 0,
+		value: 0
+	}
+];
 
-
-
-//The function for when the page loads
+//Start of game play
 $(document).ready(function() {
-
-	//Function for choosing a random number at start
-	//Number is between 19 and 120, per video instructions
-	var computerNumber = (Math.floor(Math.random) * 120) //saw something online about doing * 101+19; does this work and if so, why?
 	
+	function setup() {
+		wins: 0;
+		losses: 0;
+		computerNumber = Math.Floor(Math.random() (120 - 19)) + 19;
 
-	//Random numbers also need to be set for each crystal
-	var whiteCrystal = (Math.floor(Math.random) * 12)
-	var blueCrystal = (Math.floor(Math.random) * 12)
-	var greenCrystal = (Math.floor(Math.random) * 12)
-	var orangeCrystal = (Math.floor(Math.random) * 12)
+		crystal.value = Math.Floor(Math.random() (12 - 1)) + 1; //how would I set this up for each one?
 
-	//The computer number needs to be printed to the screen
-	//The crystal number needs to be printed to the crystals div, not the screen
-	//Fun idea: display the value of each crystal after clicking
-}
+		$("#computernumber").html(computerNumber);
+		$("#playernumber").html(playerNumber);
+		//$(".crystals").html(crystal.value);  <--maybe show these after the first click?
+		$(".wins").html(wins);
+		$(".losses").html(losses);
+		$("#prompt").text("Click a crystal to start!")
 
-//Settings at the beginning of the game
-wins = 0
-losses = 0
-playerNumber = 0
-counter = 0
+	};
 
-function reset() {
-	playerNumber = 0
-}
+	function scoreCheck() {
+		if (playerNumber === computerNumber) {
+			wins++;
+			$("#prompt").text("You won!");
+			$("#playerNumber").html(playerNumber);
+			//some kind of animation with glitter?
+			reset()
+		}
+		else if (playerNumber > computerNumber) {
+			losses++;
+			$("#prompt").text("You lost. Try again!");
+			$("#playerNumber").html(playerNumber);
+			reset()
+		}
+	};
 
-function print() {
+	//click function for crystals
+	$(".white").on("click" function() {
+		playerNumber = playerNumber + crystal.value; //check naming of this, might not be calling correctly; how to call name above?
+		scoreCheck();
+		$("#playerNumber").html(playerNumber);
+	};
 
-}
-//This will count the number of times each crystal is clicked, and multiply accordingly
-//Other thought: could have individual counters for each crystal
-function counter() {
+	$(".blue").on("click" function() {
+		playerNumber = playerNumber + crystal.value; //check naming of this, might not be calling correctly; how to call name above?
+		scoreCheck();
+		$("#playerNumber").html(playerNumber);
+	};
 
-}
+	$(".green").on("click" function() {
+		playerNumber = playerNumber + crystal.value; //check naming of this, might not be calling correctly; how to call name above?
+		scoreCheck();
+		$("#playerNumber").html(playerNumber);
+	};
+
+	$(".orange").on("click" function() {
+		playerNumber = playerNumber + crystal.value; //check naming of this, might not be calling correctly; how to call name above?
+		scoreCheck();
+		$("#playerNumber").html(playerNumber);
+	};
+	//basically same as above, only without resetting wins and losses?
+	function reset () {
+		computerNumber = Math.Floor(Math.random() (120 - 19)) + 19;
+
+		crystal.value = Math.Floor(Math.random() (12 - 1)) + 1; //how would I set this up for each one?
+
+		$("#computernumber").html(computerNumber);
+		$("#playernumber").html(playerNumber);
+		//$(".crystals").html(crystal.value);  <--maybe show these after the first click?
+		$(".wins").html(wins);
+		$(".losses").html(losses);
+		$("#prompt").text("Click a crystal to start!")
+	};
+
+
+
+
+
+
+
+
+
+
+
