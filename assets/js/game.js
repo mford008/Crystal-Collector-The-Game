@@ -39,26 +39,19 @@ console.log(crystal);
 $(document).ready(function() {
 	
 	function setupAndReset() {
-		//{type, id} = crystalGame
-		//crystalGame.wins = 0;
-		//crystalGame.losses = 0;
 		crystalGame.playerNumber = 0;
 		crystalGame.computerNumber = Math.floor(Math.random() * (120 - 19)) + 19;
 			console.log("this is the random number", crystalGame.computerNumber);
 
-			//for randomizing the crystal values each time... not working, fix
 		crystal[0].value = Math.floor(Math.random() * (12 - 1)) + 1
 		crystal[1].value = Math.floor(Math.random() * (12 - 1)) + 1
 		crystal[2].value = Math.floor(Math.random() * (12 - 1)) + 1
 		crystal[3].value = Math.floor(Math.random() * (12 - 1)) + 1
-			
-
-		//crystal.value = Math.Floor(Math.random() (12 - 1)) + 1; //how would I set this up for each one?
 
 		$("#targetnumber").html(crystalGame.computerNumber);
 		//console.log(computerNumber);
 		$("#updatedplayernumber").html(crystalGame.playerNumber);
-		//$(".crystals").html(crystal.value);  <--maybe show these after the first click?
+		$(".crystals").html(crystal.value);
 		$("#winnumber").html(crystalGame.wins);
 		$("#lossnumber").html(crystalGame.losses);
 		//$("#winorlose").html(" ");
@@ -75,7 +68,6 @@ $(document).ready(function() {
 			crystalGame.wins++;
 			$("#winorlose").html("You won!");
 			$("#updatedplayernumber").append(crystalGame.playerNumber);
-			//some kind of animation with glitter?
 			setupAndReset()
 		}
 		else if (crystalGame.playerNumber > crystalGame.computerNumber) {
@@ -90,7 +82,6 @@ $(document).ready(function() {
 	//click function for crystals
 	$(".white").on("click", function() {
 		crystalGame.playerNumber += crystal[0].value;
-		//playerNumber = playerNumber + crystal[0].value; //check naming of this, might not be calling correctly; how to call name above?
 		scoreCheck();
 		$("#updatedplayernumber").html(crystalGame.playerNumber);
 		console.log(crystal[0].value);
@@ -99,7 +90,6 @@ $(document).ready(function() {
 
 	$(".blue").on("click", function() {
 		crystalGame.playerNumber += crystal[1].value;
-		//playerNumber = playerNumber + crystal[1].value; //check naming of this, might not be calling correctly; how to call name above?
 		scoreCheck();
 		$("#updatedplayernumber").html(crystalGame.playerNumber);
 		console.log(crystal[1].value);
@@ -108,7 +98,6 @@ $(document).ready(function() {
 
 	$(".green").on("click", function() {
 		crystalGame.playerNumber += crystal[2].value;
-		//playerNumber = playerNumber + crystal[2].value; //check naming of this, might not be calling correctly; how to call name above?
 		scoreCheck();
 		$("#updatedplayernumber").html(crystalGame.playerNumber);
 		console.log(crystal[2].value);
@@ -117,25 +106,12 @@ $(document).ready(function() {
 
 	$(".orange").on("click", function() {
 		crystalGame.playerNumber += crystal[3].value;
-		//playerNumber = playerNumber + crystal[3].value; //check naming of this, might not be calling correctly; how to call name above?
 		scoreCheck();
 		$("#updatedplayernumber").html(crystalGame.playerNumber);
 		console.log(crystal[3].value);
 		console.log("orangecrystal", crystalGame.playerNumber);
 	});
-	//basically same as above, only without resetting wins and losses?
-	// function reset () {
-	// 	crystalGame.computerNumber = Math.Floor(Math.random() (120 - 19)) + 19;
-
-	// 	//crystal.value = Math.Floor(Math.random() (12 - 1)) + 1; //how would I set this up for each one?
-
-	// 	$("#computernumber").html(crystalGame.computerNumber);
-	// 	$("#playernumber").html(crystalGame.playerNumber);
-	// 	//$(".crystals").html(crystal.value);  <--maybe show these after the first click?
-	// 	$(".wins").html(wins);
-	// 	$(".losses").html(losses);
-	// 	$("#prompt").text("Click a crystal to start!")
-	//});
+	
 
 });
 
