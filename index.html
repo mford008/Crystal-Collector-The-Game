@@ -15,7 +15,8 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<!-- Link to JS file -->
   <script type="text/javascript" src="assets/js/game.js"></script>
-
+	<!-- Font link for title -->
+	<link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
 </head>
 
 <body>
@@ -25,47 +26,54 @@
 			<h1>Crystal Collector</h1>
 		</div>
 		
-		<br><br>
+		<br>
 
 		<div class="directions">
 			<p>In this game, you will be given a random number. Click on the crystals pictured below to gain points toward the random number. Each crystal has a random, hidden value that changes with every game. Try to get to the random number exactly, but don't go over or you lose the game! 
-			<br>
+			<br><br>
 			Hint: try to figure out the value of each crystal first.
 		</div>	
 
-		<br><br>
+		<br>
 		
+		<div id="winorlose"></div>
+		
+		<br>
+
 		<div id="prompt">
 		</div>
 
-		<br><br>
+		<br>
 
 		<div id="computernumber">
 			<h2>Your target number is: </h2>
 			<div id="targetnumber"></div>
 		</div>
 		
-		<br><br>
+		<br>
 
 		<div id="playernumber">
 			<h2>Your current number is: </h2>
 			<div id="updatedplayernumber"></div>
 		</div>
 
-		<br><br>
+		<br>
 
 		<div class="playerstats">
 			<div class="wins">
 				<span>Wins: </span>
 					<div id="winnumber"></div>
 			</div>
+
+			<br>
+
 			<div class="losses">
 				<span> Losses: </span>
 					<div id="lossnumber"></div>
 			</div>	
 		</div>
 		
-		<br><br>
+		<br>
 
 		<div class="crystals">
 			
@@ -87,6 +95,7 @@
 
 		</div>
 
+		<br><br><br><br>
 
 
 	</div>

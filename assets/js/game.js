@@ -46,6 +46,13 @@ $(document).ready(function() {
 		crystalGame.computerNumber = Math.floor(Math.random() * (120 - 19)) + 19;
 			console.log("this is the random number", crystalGame.computerNumber);
 
+			//for randomizing the crystal values each time... not working, fix
+		crystal[0].value = Math.floor(Math.random() * (12 - 1)) + 1
+		crystal[1].value = Math.floor(Math.random() * (12 - 1)) + 1
+		crystal[2].value = Math.floor(Math.random() * (12 - 1)) + 1
+		crystal[3].value = Math.floor(Math.random() * (12 - 1)) + 1
+			
+
 		//crystal.value = Math.Floor(Math.random() (12 - 1)) + 1; //how would I set this up for each one?
 
 		$("#targetnumber").html(crystalGame.computerNumber);
@@ -54,6 +61,7 @@ $(document).ready(function() {
 		//$(".crystals").html(crystal.value);  <--maybe show these after the first click?
 		$("#winnumber").html(crystalGame.wins);
 		$("#lossnumber").html(crystalGame.losses);
+		//$("#winorlose").html(" ");
 		$("#prompt").html("Click a crystal to start!")
 		scoreCheck()
 
@@ -65,14 +73,14 @@ $(document).ready(function() {
 	function scoreCheck() {
 		if (crystalGame.playerNumber === crystalGame.computerNumber) {
 			crystalGame.wins++;
-			$("#prompt").html("You won!");
+			$("#winorlose").html("You won!");
 			$("#updatedplayernumber").append(crystalGame.playerNumber);
 			//some kind of animation with glitter?
 			setupAndReset()
 		}
 		else if (crystalGame.playerNumber > crystalGame.computerNumber) {
 			crystalGame.losses++;
-			$("#prompt").html("You lost. Try again!");
+			$("#winorlose").html("You lost. Try again!");
 			$("#updatedplayernumber").append(crystalGame.playerNumber);
 			setupAndReset()
 		}
