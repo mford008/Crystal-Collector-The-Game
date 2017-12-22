@@ -17,7 +17,7 @@ app.use(express.static('public'));
 // require('./assets/js')(app);
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, function () {
