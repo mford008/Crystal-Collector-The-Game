@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Crystal Collector Game</title>
+
+   <!-- Loading in the jQuery library -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+	<!-- Putting in CSS -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- Link to JS file -->
+  <script type="text/javascript" src="js/game.js"></script>
+	<!-- Font link for title -->
+	<link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header">
+			<h1>Crystal Collector</h1>
+		</div>
+
+		<br>
+
+		<div class="directions">
+			<p>In this game, you will be given a random number. Click on the crystals pictured below to gain points toward the random number. Each crystal has a random, hidden value that changes with every game. Try to get to the random number exactly, but don't go over or you lose the game!
+			<br><br>
+			Hint: try to figure out the value of each crystal first.
+		</div>
+
+		<br>
+
+		<div id="winorlose"></div>
+
+		<br>
+
+		<div id="prompt">
+		</div>
+
+		<br>
+		<div class="playerinfo">
+		<div class="numbers">
+			<div id="computernumber">
+				<h2>Your target number is: <div id="targetnumber"> </div></h2>
+				<!-- <div id="targetnumber"></div> -->
+			</div>
+
+			<br>
+
+			<div id="playernumber">
+				<h2>Your current number is: <div id="updatedplayernumber"> </div></h2>
+				<!-- <div id="updatedplayernumber"></div> -->
+			</div>
+		</div>
+
+		<br>
+
+		<div class="playerstats">
+			<div class="wins">
+				<span>Wins: <div id="winnumber"></div> </span>
+					<!-- <div id="winnumber"></div> -->
+			</div>
+
+			<br>
+
+			<div class="losses">
+				<span> Losses: <div id="lossnumber"></div> </span>
+					<!-- <div id="lossnumber"></div> -->
+			</div>
+		</div>
+		</div>
+		<br>
+
+		<div class="crystals">
+
+			<div class="white">
+				<img src="images/whitecrystal.jpg">
+			</div>
+
+			<div class="blue">
+				<img src="images/bluecrystal.jpg">
+			</div>
+
+			<div class="green">
+				<img src="images/greencrystal.jpg">
+			</div>
+
+			<div class="orange">
+				<img src="images/orangecrystal.jpg">
+			</div>
+
+		</div>
+
+		<br><br><br><br>
+
+
+	</div>
+
+</body>
